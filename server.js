@@ -37,6 +37,8 @@ app.post("/log", (req, res) => {
     kladr_region: req.body.kladr_region,
     city: req.body.city,
     user_agent: userAgent,
+    referrer: req.body.referrer,
+    href: req.body.href,
   };
 
   let fileName = "";
@@ -56,6 +58,8 @@ app.post("/log", (req, res) => {
       { id: "kladr_region", title: "Kladr Region" },
       { id: "city", title: "City" },
       { id: "user_agent", title: "User-Agent" },
+      { id: "referrer", title: "Referrer" },
+      { id: "href", title: "Href" },
     ],
     append: true,
   });
