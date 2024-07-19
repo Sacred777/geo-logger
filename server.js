@@ -1,27 +1,3 @@
-/*
-const express = require("express");
-const app = express();
-
-const data = [
-  {
-    _id: 1,
-    body: "body 111",
-  },
-  {
-    _id: 2,
-    body: "body 222",
-  },
-];
-
-app.get("/data", (req, res) => {
-  res.send(JSON.stringify(data));
-});
-
-app.listen(8089, () => {
-  console.log("Server started");
-});
-*/
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
@@ -94,6 +70,22 @@ app.post("/log", (req, res) => {
       console.error("Error writing to CSV", error);
       res.status(500).send("Error logging data");
     });
+});
+
+/* Этот код только для теста */
+const data = [
+  {
+    _id: 1,
+    body: "body 111",
+  },
+  {
+    _id: 2,
+    body: "body 222",
+  },
+];
+
+app.get("/data", (req, res) => {
+  res.send(JSON.stringify(data));
 });
 
 app.listen(PORT, () => {
